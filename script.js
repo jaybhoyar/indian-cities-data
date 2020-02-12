@@ -1,10 +1,4 @@
-fetch("https://indian-cities-api-nocbegfhqg.now.sh/cities")
-	.then(response => {
-		return response.json();
-	})
-	.then(jsonData => {
-		state(jsonData);
-	});
+const stateDiv = document.querySelector(".state");
 
 function state(data) {
 	let arr = [];
@@ -16,7 +10,13 @@ function state(data) {
 			arr.push(value.State);
 		}
 	});
-
-	console.log(state);
+	stateDiv.innerHTML = arr.sort();
 	console.log(arr.sort());
 }
+fetch("https://indian-cities-api-nocbegfhqg.now.sh/cities")
+	.then(response => {
+		return response.json();
+	})
+	.then(jsonData => {
+		state(jsonData);
+	});
