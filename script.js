@@ -5,12 +5,17 @@ function state(data) {
 	arr.push(data[0].State);
 
 	cities = data;
-	var state = cities.filter(value => {
+	cities.filter(value => {
 		if (!arr.includes(value.State)) {
 			arr.push(value.State);
 		}
 	});
-	stateDiv.innerHTML = arr.sort();
+	arr = arr.sort();
+	for (let i = 0; i < arr.length; i++) {
+		let p = document.createElement("p");
+		p.innerHTML = arr[i];
+		stateDiv.appendChild(p);
+	}
 	console.log(arr.sort());
 }
 fetch("https://indian-cities-api-nocbegfhqg.now.sh/cities")
