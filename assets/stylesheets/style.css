@@ -153,4 +153,16 @@ header .container p {
   line-height: 1rem;
   font-weight: 600;
 }
+
+main .state .state_list {
+  margin: 1rem;
+  outline: none;
+  width: 300px;
+  height: 60px;
+  border: 1px solid #999;
+  font-size: 18px;
+  color: #1c87c9;
+  background-color: #eee;
+  border-radius: 5px;
+}
 /*# sourceMappingURL=style.css.map */
